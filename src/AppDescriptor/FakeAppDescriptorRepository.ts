@@ -14,6 +14,7 @@ export class FakeAppDescriptorRepository implements AppDescriptorRepository {
 const appDescriptor: AppDescriptor = {
     pages: [
         {
+            name: "index",
             sections: []
         }
     ],
@@ -30,5 +31,9 @@ const appDescriptor: AppDescriptor = {
             ar: 'طريق الافق',
             en: 'Tareek Alofuk'
         }
+    },
+    menu: {
+        options: [],
+        drawerIcon: ''
     }
 }
