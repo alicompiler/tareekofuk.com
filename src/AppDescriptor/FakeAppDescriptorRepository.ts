@@ -12,12 +12,11 @@ export class FakeAppDescriptorRepository implements AppDescriptorRepository {
 }
 
 const appDescriptor: AppDescriptor = {
-    pages: [
-        {
-            name: "index",
-            sections: []
+    pages: {
+        index: {
+            sections: {}
         }
-    ],
+    },
     socialMedia: [
         { name: 'Facebook', logo: '/res/social-icons/facebook-light.png', url: '' },
         { name: 'LinkedIn', logo: '/res/social-icons/linkedin-light.png', url: '' },

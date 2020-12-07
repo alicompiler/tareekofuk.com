@@ -2,7 +2,9 @@ import { LocalString } from "../Core/Language";
 
 export interface AppDescriptor {
     meta: AppMetadata;
-    pages: Page[];
+    pages: {
+        [pageName: string]: PageDescriptor;
+    };
     socialMedia: SocialMedia[];
     menu: Menu;
 }
@@ -12,14 +14,14 @@ interface AppMetadata {
     title: LocalString;
 }
 
-interface Page {
-    name: string;
-    sections: Section[];
+export interface PageDescriptor {
+    sections: {
+        [sectionName: string]: SectionDescriptor;
+    };
     [propertyName: string]: any;
 }
 
-interface Section {
-    name: string;
+export interface SectionDescriptor {
     [propertyName: string]: any;
 }
 
