@@ -1,15 +1,15 @@
 import { LocalString } from "../Core/Language";
 
 export interface AppDescriptor {
-    meta: AppMetadata;
+    meta: AppMetadataDescriptor;
     pages: {
         [pageName: string]: PageDescriptor;
     };
-    socialMedia: SocialMedia[];
-    menu: Menu;
+    socialMedia: SocialMediaDescriptor[];
+    menu: MenuDescriptor;
 }
 
-interface AppMetadata {
+export interface AppMetadataDescriptor {
     logo: string;
     title: LocalString;
 }
@@ -25,20 +25,20 @@ export interface SectionDescriptor {
     [propertyName: string]: any;
 }
 
-interface SocialMedia {
+export interface SocialMediaDescriptor {
     name: string;
     logo: string;
     url: string;
 }
 
-export interface Menu {
+export interface MenuDescriptor {
     options: MenuOption[];
     drawerIcon: string;
 }
 
 export interface MenuOption {
     title: LocalString;
-    action: AppDescriptorAction;
+    action: AppActionDescriptor;
 }
 
 export enum AppDescriptorActionType {
@@ -46,7 +46,7 @@ export enum AppDescriptorActionType {
     DOM_ID = "DOM_ID",
     CHANGE_LANGUAGE = "CHANGE_LANGUAGE"
 }
-export interface AppDescriptorAction {
+export interface AppActionDescriptor {
     type: AppDescriptorActionType;
     value: any;
 }

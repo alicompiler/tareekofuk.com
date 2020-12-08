@@ -1,3 +1,7 @@
+import { indexPage } from './PreDefinedAppDescriptor/IndexPage';
+import { socialMedia } from './PreDefinedAppDescriptor/SocialMedia';
+import { metadata } from './PreDefinedAppDescriptor/Metadata';
+import { menu } from './PreDefinedAppDescriptor/Menu';
 import { AppDescriptor } from "./AppDescriptor";
 import { AppDescriptorRepository } from "./AppDescriptorRepository";
 
@@ -13,26 +17,9 @@ export class FakeAppDescriptorRepository implements AppDescriptorRepository {
 
 const appDescriptor: AppDescriptor = {
     pages: {
-        index: {
-            sections: {}
-        }
+        index: indexPage
     },
-    socialMedia: [
-        { name: 'Facebook', logo: '/res/social-icons/facebook-light.png', url: '' },
-        { name: 'LinkedIn', logo: '/res/social-icons/linkedin-light.png', url: '' },
-        { name: 'Instagram', logo: '/res/social-icons/instagram-light.png', url: '' },
-        { name: 'Twitter', logo: '/res/social-icons/twitter-light.png', url: '' },
-        { name: 'Youtube', logo: '/res/social-icons/youtube-light.png', url: '' },
-    ],
-    meta: {
-        logo: '',
-        title: {
-            ar: 'طريق الافق',
-            en: 'Tareek Alofuk'
-        }
-    },
-    menu: {
-        options: [],
-        drawerIcon: ''
-    }
+    socialMedia: socialMedia,
+    meta: metadata,
+    menu: menu
 }
