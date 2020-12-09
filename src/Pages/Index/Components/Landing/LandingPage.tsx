@@ -1,7 +1,7 @@
 import React from "react";
 import { LandingPageDescriptor } from "../../IndexPageDescriptor";
 import { LandingPageBackgroundContainer } from "./LandingPageBackgroundContainer";
-
+import { MainContent } from "./MainContent";
 
 interface Props {
     landingPage: LandingPageDescriptor;
@@ -24,7 +24,7 @@ export class LandingPage extends React.Component<Props> {
 
             {/* <Main/> */}
 
-            <h1 className='text-center text-4xl'>THIS IS SOME TESTING CONTENT</h1>
+            <MainContent />
 
         </div>
     }

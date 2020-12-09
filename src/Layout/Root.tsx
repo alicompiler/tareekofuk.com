@@ -2,6 +2,7 @@ import * as React from "react";
 import { AppDescriptor } from "../AppDescriptor/AppDescriptor";
 import { AppDescriptorContext } from "../AppDescriptor/AppDescriptorContext";
 import { FakeAppDescriptorRepository } from "../AppDescriptor/FakeAppDescriptorRepository";
+import { getCurrentLanguage } from "../Core/Language";
 import { Router } from "./Router"
 
 interface State {
@@ -47,9 +48,18 @@ export class Root extends React.Component<any, State> {
             </div>;
         }
 
-        return <AppDescriptorContext.Provider value={app}>
-            <Router />
-        </AppDescriptorContext.Provider>
+        return <div style={{ direction: this.getLayoutDirection() }}>
+            <AppDescriptorContext.Provider value={app}>
+                <Router />
+            </AppDescriptorContext.Provider>
+        </div>
+    }
+
+
+    private getLayoutDirection(): "rtl" | "ltr" {
+        const lang = getCurrentLanguage();
+        const rightToLeftLanguages = ["ar"];
+        return rightToLeftLanguages.includes(lang) ? "rtl" : "ltr";
     }
 
 }
