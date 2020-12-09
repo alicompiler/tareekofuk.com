@@ -2,7 +2,7 @@ import * as React from "react";
 import { AppDescriptor } from "../AppDescriptor/AppDescriptor";
 import { AppDescriptorContext } from "../AppDescriptor/AppDescriptorContext";
 import { FakeAppDescriptorRepository } from "../AppDescriptor/FakeAppDescriptorRepository";
-import { getCurrentLanguage } from "../Core/Language";
+import { getCurrentLanguage } from "../Localization/Language";
 import { Router } from "./Router"
 
 interface State {

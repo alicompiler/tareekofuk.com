@@ -1,45 +1,73 @@
 import * as React from "react";
+import { LandingPageDescriptor } from "../../IndexPageDescriptor";
 
-export interface Props {
-    image: string;
+interface Props {
+    landingPage: LandingPageDescriptor;
 }
 
-export class LandingPageBackground extends React.Component<Props> {
+interface State {
+    loadedImages: string[];
+    currentImageIndex: number;
+}
 
-    private readonly TIMEOUT_INTERVAL: number = 250;
-    private timeoutId: any = undefined;
-    private backgroundDivRef: HTMLElement | null = null;
+export class LandingPageBackground extends React.Component<Props, State> {
 
-    private restartOpacity(): void {
-        clearTimeout(this.timeoutId);
-        this.setOpacityOfBackgroundDiv("0");
-        this.timeoutId = setTimeout(() => this.setOpacityOfBackgroundDiv("1"), this.TIMEOUT_INTERVAL);
+    private intervalId: any = undefined;
+
+    constructor(props: Props) {
+        super(props);
+        const startingImage = props.landingPage.images[0];
+        this.state = { loadedImages: [startingImage], currentImageIndex: 0 };
     }
 
-    private setOpacityOfBackgroundDiv(opacity: string): void {
-        if (this.backgroundDivRef) {
-            this.backgroundDivRef.style.opacity = opacity;
+    componentDidMount() {
+        this.intervalId = setInterval(this.displayNextImage, this.props.landingPage.interval);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
+    }
+
+    private displayNextImage = () => {
+        const { loadedImages, currentImageIndex } = this.state;
+        if (loadedImages.length > currentImageIndex + 1) {
+            this.setState({ currentImageIndex: currentImageIndex + 1 });
+        } else if (loadedImages.length === currentImageIndex + 1) {
+            this.setState({ currentImageIndex: 0 });
         }
     }
 
-    componentDidUpdate(prevProps: Props) {
-        if (prevProps.image !== this.props.image) {
-            this.restartOpacity();
-        }
+    private markAsLoaded(image: string): void {
+        this.setState({ loadedImages: [...this.state.loadedImages, image] });
     }
 
-    render(): any {
-        const { image } = this.props;
+    render() {
+        const { images } = this.props.landingPage;
+        const { loadedImages, currentImageIndex } = this.state;
+        const currentImage = loadedImages[currentImageIndex];
 
-        return <div className={'absolute top-0 left-0 w-full h-full'}>
-            <div className={'w-full h-full relative'}>
-                {
-                    <div ref={ref => this.backgroundDivRef = ref}
-                        style={{ backgroundImage: `url(${image})` }}
-                        className={'bg-center bg-no-repeat bg-cover absolute top-0 left-0 w-full h-full transition duration-1000 ease-in-out'} />
-                }
+        return (
+            <div className={'w-full h-full absolute top-0 left-0 z-10'}>
+                <div className={'relative w-full h-full'}>
+                    <div className={'hidden'}>
+                        {
+                            images.map((url, index) => <img key={index} alt={"image"} src={url} onLoad={() => this.markAsLoaded(url)} />)
+                        }
+                    </div>
+
+                    <div className={'absolute top-0 left-0 w-full h-full'}>
+                        <div className={'w-full h-full relative'}>
+                            {
+                                <div style={{ backgroundImage: `url(${currentImage})` }}
+                                    className={'bg-center bg-no-repeat bg-cover absolute top-0 left-0 w-full h-full transition duration-1000 ease-in-out'} />
+                            }
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>;
+        );
     }
+
 
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getCurrentLanguage, setLanguage, SupportedLanguage } from "../../Core/Language";
+import { getCurrentLanguage, setLanguage, SupportedLanguage } from "../../Localization/Language";
 import { AppActionDescriptor } from "../AppDescriptor";
 
 

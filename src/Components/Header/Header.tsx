@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AppActionComponentFactory } from "../../AppDescriptor/AppActionDescriptor/AppActionComponentFactory";
 import { AppMetadataDescriptor, MenuDescriptor } from "./../../AppDescriptor/AppDescriptor";
-import { getCurrentLanguage } from "./../../Core/Language";
+import { getCurrentLanguage } from "../../Localization/Language";
 
 interface Props {
     metadata: AppMetadataDescriptor;

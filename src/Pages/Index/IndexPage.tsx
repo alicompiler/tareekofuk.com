@@ -11,7 +11,7 @@ class IndexPage extends React.Component<Props>{
     render() {
         const indexPage: IndexPageDescriptor = this.props.appDescriptor.pages["index"] as any;
         return <div className={'text-white overflow-x-hidden bg-gray-900'}>
-            <LandingPage landingPage={indexPage.sections.landing} />
+            <LandingPage appDescriptor={this.props.appDescriptor} landingPage={indexPage.sections.landing} />
         </div>
     }
 
