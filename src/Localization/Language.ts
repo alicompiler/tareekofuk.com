@@ -1,7 +1,12 @@
+import { ILocals } from "./Locals";
+
 export interface LocalString {
     ar: string;
     en: string;
 };
+
+
+export type LocalStringRef = keyof ILocals;
 
 export type SupportedLanguage = keyof LocalString;
 

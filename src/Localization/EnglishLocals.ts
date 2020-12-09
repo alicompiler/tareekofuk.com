@@ -1,5 +1,6 @@
 import { ILocals } from './Locals';
 export const EnglishLocals: ILocals = {
     contact_us: 'Contact Us',
-    destinations: 'Destinations'
+    destinations: 'Destinations',
+    services: 'Services'
 }

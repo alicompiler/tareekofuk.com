@@ -5,6 +5,7 @@ import { getCurrentLanguage } from "./Language";
 interface ILocals {
     destinations: string;
     contact_us: string;
+    services : string;
 }
 
 
