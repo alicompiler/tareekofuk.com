@@ -1,4 +1,4 @@
-import { LocalString } from "../Localization/Language";
+import { LocalString } from './../Localization/Language';
 
 export interface AppDescriptor {
     meta: AppMetadataDescriptor;
@@ -13,6 +13,7 @@ export interface AppMetadataDescriptor {
     logo: string;
     title: LocalString;
     slogan: LocalString;
+    copyrightText : LocalString;
 }
 
 export interface PageDescriptor {

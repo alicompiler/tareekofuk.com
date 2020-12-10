@@ -6,6 +6,7 @@ import { IndexPageDescriptor } from "./IndexPageDescriptor";
 import { ServicesSection } from "./Components/ServicesSection/ServicesSection";
 import { PartnersSection } from "./Components/Partners/PartnersSection";
 import { ContactSection } from "./Components/Contact/ContactSection";
+import FooterContainer from "./../../Components/Footer/FooterContainer";
 interface Props {
     appDescriptor: AppDescriptor;
 }
@@ -19,6 +20,7 @@ class IndexPage extends React.Component<Props>{
             <PartnersSection sliderSettings={indexPage.sections.partners.sliderSettings}
                 partners={indexPage.sections.partners.partners} />
             <ContactSection contactInfo={indexPage.sections.contact} />
+            <FooterContainer />
         </div>
     }
 
