@@ -13,11 +13,18 @@ export type SupportedLanguage = keyof LocalString;
 
 const LANGUAGE_KEY = "__LANGUAGE";
 
+
+let _language: SupportedLanguage | null = null;
 export function getCurrentLanguage(): SupportedLanguage {
-    const lang = localStorage[LANGUAGE_KEY];
-    return lang ?? "en";
+    if (!_language) {
+        const lang = localStorage[LANGUAGE_KEY];
+        _language = lang ?? "en";
+    }
+
+    return _language!;
 }
 
 export function setLanguage(language: SupportedLanguage): void {
     localStorage[LANGUAGE_KEY] = language;
+    _language = null;
 }

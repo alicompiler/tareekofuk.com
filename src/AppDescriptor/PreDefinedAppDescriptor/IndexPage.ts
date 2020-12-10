@@ -81,7 +81,64 @@ export const indexPage: IndexPageDescriptor = {
                         en: 'Enjoy traveling to the most amazing destinations on the glob with customized trips to ensure comfort in your dream holiday. Hotels, Visa, tickets and Tours throughout the year\'s highlighted tourism and sport\'s events.\n'
                     }
                 },
-            ]
+            ],
+        },
+        partners: {
+            partners: [
+                {
+                    details: [
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                    ],
+                    logo: 'https://www.tareekofuk.com/images/partners/partners_1.png',
+                    title: { ar: 'الخطوط الجوية القطرية', en: 'Qatar Airways' }
+                },
+                {
+                    details: [
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                    ],
+                    logo: 'https://www.tareekofuk.com/images/partners/partners_2.png',
+                    title: { ar: 'الخطوط الجوية الاماراتية', en: 'Eumarts' }
+                },
+                {
+                    details: [
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                    ],
+                    logo: 'https://www.tareekofuk.com/images/partners/partners_3.png',
+                    title: { ar: 'فلاي دبي', en: 'Flydubai' }
+                },
+                {
+                    details: [
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                        { ar: 'كلمة كلمة كلمة كلمة كلمة', en: 'XYZ ABC XYZ ABC XYZ ABC XYZ ABC XYZ ABC' },
+                    ],
+                    logo: 'https://www.tareekofuk.com/images/partners/partners_4.png',
+                    title: { ar: 'الخطوط الجوية العراقية', en: 'Iraqi Airways' }
+                },
+            ],
+            sliderSettings: {
+                infinite: true,
+                speed: 500,
+                autoplaySpeed: 5000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                swipeToSlide: true
+            }
         }
     }
 

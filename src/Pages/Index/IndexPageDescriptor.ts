@@ -6,6 +6,10 @@ export interface IndexPageDescriptor extends PageDescriptor {
         landing: LandingPageDescriptor,
         services: {
             services: Service[];
+        },
+        partners: {
+            partners: Partner[];
+            sliderSettings : any;
         }
     };
 }
@@ -21,4 +25,11 @@ export interface LandingPageDescriptor {
     images: string[];
     interval: number;
     opacity: number;
+}
+
+
+export interface Partner {
+    logo: string;
+    title: LocalString;
+    details: LocalString[];
 }
