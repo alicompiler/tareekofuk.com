@@ -17,8 +17,6 @@ export class PartnersSection extends React.Component<Props> {
 
         const settings = { ...sliderSettings };
 
-
-
         return <div className="container mx-auto py-16 px-8">
             <SectionTitle title={Locals.partners} />
             <Slider {...settings}>

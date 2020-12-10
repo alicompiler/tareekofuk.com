@@ -3,5 +3,10 @@ export const EnglishLocals: ILocals = {
     contact_us: 'Contact Us',
     destinations: 'Destinations',
     services: 'Services',
-    partners: 'Partners'
+    partners: 'Partners',
+    send: 'Send',
+    email: 'Email',
+    message: 'Message',
+    name: 'Name',
+    subject: 'Subject'
 }

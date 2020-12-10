@@ -3,6 +3,11 @@ import { ArabicLocals } from './ArabicLocals';
 import { getCurrentLanguage } from "./Language";
 
 interface ILocals {
+    send: string;
+    message: string;
+    subject: string;
+    email: string;
+    name: string;
     partners: string;
     destinations: string;
     contact_us: string;
