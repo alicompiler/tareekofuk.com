@@ -12,6 +12,10 @@ export interface IndexPageDescriptor extends PageDescriptor {
             sliderSettings: any;
         },
         contact: ContactInfo;
+        destination: {
+            title: LocalString;
+            destinationsKeys: string[];
+        }
     };
 }
 

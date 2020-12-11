@@ -1,3 +1,4 @@
+import { Locals } from '../../Localization/Locals';
 import { IndexPageDescriptor } from './../../Pages/Index/IndexPageDescriptor';
 export const indexPage: IndexPageDescriptor = {
     sections: {
@@ -156,6 +157,10 @@ export const indexPage: IndexPageDescriptor = {
                 { ar: '+9647814115368 (بغداد)', en: '+9647817777214 (Najaf)' },
                 { ar: '+905364347663 (اسطنبول)', en: '+905364347663 (Istanbul)' },
             ]
+        },
+        destination: {
+            title: { ar: Locals.destinations, en: Locals.destinations },
+            destinationsKeys: ["roma", "dubai", "tehran"]
         }
     }
 

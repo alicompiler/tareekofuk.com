@@ -12,6 +12,22 @@ interface Props {
 
 export class DestinationModal extends React.Component<Props> {
 
+    componentDidUpdate() {
+        if (this.props.destination) {
+            document.body.style.overflow = "hidden";
+            document.body.style.top = `-${window.scrollY}px`;
+            document.body.style.position = "fixed";
+            document.body.style.width = "100%";
+        } else {
+            const scrollY = document.body.style.top;
+            document.body.style.overflow = "";
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.width = "";
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        }
+    }
+
     render(): any {
         const { destination, onClose } = this.props;
         const lang = getCurrentLanguage();
@@ -21,7 +37,7 @@ export class DestinationModal extends React.Component<Props> {
         }
 
         return <div style={{ zIndex: 100000 }}
-            className={'w-full h-screen fixed top-0 left-0 bg-gray-900 bg-opacity-75 items-center justify-center flex '}>
+            className={'w-full h-screen fixed top-0 left-0 bg-gray-900 bg-opacity-75 items-center justify-center flex text-black'}>
 
             <a onClick={() => onClose()} className={'cursor-pointer absolute'} style={{ top: 60, zIndex: 100002 }}>
                 <img alt={'close'} className={'rounded-full w-8 h-8 md:w-12 md:h-12 bg-gray-900 p-2'}
