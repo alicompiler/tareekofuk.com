@@ -8,5 +8,10 @@ export const ArabicLocals: ILocals = {
     message: 'الرسالة',
     name: 'الاسم',
     send: 'ارسال',
-    subject: 'الموضوع'
+    subject: 'الموضوع',
+    price: 'السعر',
+    description: 'التفاصيل',
+    duration: 'المدة',
+    for_booking: 'للحجز',
+    images: 'الصور',
 }

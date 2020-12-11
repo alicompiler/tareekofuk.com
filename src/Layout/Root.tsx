@@ -48,7 +48,7 @@ export class Root extends React.Component<any, State> {
             </div>;
         }
 
-        return <div style={{ direction: this.getLayoutDirection() }}>
+        return <div className="bg-gray-900" style={{ direction: this.getLayoutDirection() }}>
             <AppDescriptorContext.Provider value={app}>
                 <Router />
             </AppDescriptorContext.Provider>

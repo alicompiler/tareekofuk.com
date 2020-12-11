@@ -13,7 +13,7 @@ export class Footer extends React.Component<Props> {
         const { metadata } = this.props;
         const lang = getCurrentLanguage();
 
-        return <div className={'bg-gray-900 p-8 border border-white m-8 rounded'}>
+        return <div className={'bg-gray-900 p-8 border-t border-white'}>
 
 
             <div className={'p-4 justify-center items-center flex flex-col md:flex-row'}>

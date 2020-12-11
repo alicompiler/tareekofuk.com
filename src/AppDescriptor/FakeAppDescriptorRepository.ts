@@ -4,6 +4,7 @@ import { metadata } from './PreDefinedAppDescriptor/Metadata';
 import { menu } from './PreDefinedAppDescriptor/Menu';
 import { AppDescriptor } from "./AppDescriptor";
 import { AppDescriptorRepository } from "./AppDescriptorRepository";
+import { destinationsPage } from "./../AppDescriptor/PreDefinedAppDescriptor/DestinationPage";
 
 export class FakeAppDescriptorRepository implements AppDescriptorRepository {
 
@@ -17,7 +18,8 @@ export class FakeAppDescriptorRepository implements AppDescriptorRepository {
 
 const appDescriptor: AppDescriptor = {
     pages: {
-        index: indexPage
+        index: indexPage,
+        destinations: destinationsPage
     },
     socialMedia: socialMedia,
     meta: metadata,
