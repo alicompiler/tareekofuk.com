@@ -2,24 +2,32 @@ import * as React from "react";
 import { AppDescriptor } from "../AppDescriptor/AppDescriptor";
 import { AppDescriptorContext } from "../AppDescriptor/AppDescriptorContext";
 import { FakeAppDescriptorRepository } from "../AppDescriptor/FakeAppDescriptorRepository";
-import { getCurrentLanguage } from "../Localization/Language";
+import { CHANGE_LANGUAGE_EVENT_NAME, getCurrentLanguage, SupportedLanguage } from "../Localization/Language";
 import { Router } from "./Router"
 
 interface State {
     app?: AppDescriptor;
     loading: boolean;
     error: any;
+    lang: SupportedLanguage;
 }
+
+
 
 export class Root extends React.Component<any, State> {
 
     constructor(props: any) {
         super(props);
-        this.state = { loading: true, error: null };
+        this.state = { loading: true, error: null, lang: "en" };
     }
 
     async componentDidMount() {
         await this.loadAppDescriptor();
+        window.addEventListener(CHANGE_LANGUAGE_EVENT_NAME, this.onChangeLanguage);
+    }
+
+    private onChangeLanguage = () => {
+        this.setState({ lang: getCurrentLanguage() });
     }
 
     private async loadAppDescriptor(): Promise<void> {

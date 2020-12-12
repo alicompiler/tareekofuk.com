@@ -29,9 +29,12 @@ export function getCurrentLanguage(): SupportedLanguage {
 export function setLanguage(language: SupportedLanguage): void {
     localStorage[LANGUAGE_KEY] = language;
     _language = null;
+    window.dispatchEvent(new Event(CHANGE_LANGUAGE_EVENT_NAME));
 }
 
 export function isRtl(): boolean {
     const lang = getCurrentLanguage();
     return RTL_LANGUAGES.includes(lang);
 }
+
+export const CHANGE_LANGUAGE_EVENT_NAME = "CHANGE_LANGUAGE";
