@@ -1,3 +1,4 @@
+import { aboutPage } from './PreDefinedAppDescriptor/AboutPage';
 import { indexPage } from './PreDefinedAppDescriptor/IndexPage';
 import { socialMedia } from './PreDefinedAppDescriptor/SocialMedia';
 import { metadata } from './PreDefinedAppDescriptor/Metadata';
@@ -19,7 +20,8 @@ export class FakeAppDescriptorRepository implements AppDescriptorRepository {
 const appDescriptor: AppDescriptor = {
     pages: {
         index: indexPage,
-        destinations: destinationsPage
+        destinations: destinationsPage,
+        about: aboutPage,
     },
     socialMedia: socialMedia,
     meta: metadata,

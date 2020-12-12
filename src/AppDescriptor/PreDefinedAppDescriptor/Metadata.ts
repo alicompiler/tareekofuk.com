@@ -1,7 +1,7 @@
 import { AppMetadataDescriptor } from './../AppDescriptor';
 export const metadata: AppMetadataDescriptor = {
     copyrightText: {
-        ar: '© 2021 Tareek Alofuk',
+        ar: '© 2021 طريق الافق',
         en: '© 2021 Tareek Alofuk'
     },
     logo: '/res/logo.png',

@@ -1,5 +1,6 @@
 import { ILocals } from './Locals';
 export const ArabicLocals: ILocals = {
+    about_us: 'من نحن',
     contact_us: 'تواصل معنا',
     destinations: 'وجهات سياحية',
     services: 'الخدمات',
