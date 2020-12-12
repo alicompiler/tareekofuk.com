@@ -14,9 +14,6 @@ export const menu: MenuDescriptor = {
             action: { type: AppDescriptorActionType.ROUTE, value: 'who' }, title: { ar: "من نحن", en: "Who" },
         },
         {
-            action: { type: AppDescriptorActionType.DOM_ID, value: '/#service' }, title: { ar: "الخدمات", en: "Services" },
-        },
-        {
             action: { type: AppDescriptorActionType.CHANGE_LANGUAGE, value: '' }, title: { ar: "English", en: "عربي" },
         }
     ],
