@@ -1,5 +1,5 @@
 import * as React from "react";
-import { getCurrentLanguage } from "../../../../Localization/Language";
+import { getCurrentLanguage, isRtl } from "../../../../Localization/Language";
 import { Partner } from "../../IndexPageDescriptor";
 
 interface Props {
@@ -21,8 +21,8 @@ export class PartnerItem extends React.Component<Props> {
                     <img className={"w-full lg:w-9/12"} style={{ filter: 'brightness(0) invert(1)' }} src={partner.logo} />
                 </div>
 
-                <div className="hidden md:flex items-center">
-                    <ul className="border border-white rounded p-8">
+                <div className="hidden md:flex items-center" style={{ direction: isRtl() ? "rtl" : "ltr" }}>
+                    <ul className="border border-white rounded p-8 w-full">
                         {
                             partner.details.map((item, index) =>
                                 <li key={index} className="text-xl text-gray-200 list-disc">{item[lang]}</li>

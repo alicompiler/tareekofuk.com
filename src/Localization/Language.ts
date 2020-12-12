@@ -5,6 +5,8 @@ export interface LocalString {
     en: string;
 };
 
+const RTL_LANGUAGES = ["ar"];
+
 
 export type LocalStringRef = keyof ILocals;
 
@@ -27,4 +29,9 @@ export function getCurrentLanguage(): SupportedLanguage {
 export function setLanguage(language: SupportedLanguage): void {
     localStorage[LANGUAGE_KEY] = language;
     _language = null;
+}
+
+export function isRtl(): boolean {
+    const lang = getCurrentLanguage();
+    return RTL_LANGUAGES.includes(lang);
 }
