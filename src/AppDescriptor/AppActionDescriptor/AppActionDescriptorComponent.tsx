@@ -6,6 +6,7 @@ import { AppActionDescriptor } from "../AppDescriptor";
 
 interface Props {
     action: AppActionDescriptor;
+    onClick?: () => void;
 }
 
 export abstract class AppActionComponent extends React.Component<Props>{
@@ -33,6 +34,7 @@ export class RouteAppAction extends AppActionComponent {
 
     getWrapperProps(): any {
         return {
+            onClick: () => this.props.onClick?.(),
             to: this.props.action.value
         }
     }
@@ -46,6 +48,7 @@ export class DomIdAppAction extends AppActionComponent {
 
     getWrapperProps(): any {
         return {
+            onClick: () => this.props.onClick?.(),
             href: this.props.action.value
         }
     }
@@ -55,7 +58,10 @@ export class DomIdAppAction extends AppActionComponent {
 export class ChangeLanguageAppAction extends DomIdAppAction {
     getWrapperProps(): any {
         return {
-            onClick: () => this.changeLanguage()
+            onClick: () => {
+                this.changeLanguage();
+                this.props.onClick?.();
+            }
         }
     }
 

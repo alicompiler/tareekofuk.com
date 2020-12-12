@@ -17,7 +17,7 @@ export class Drawer extends React.Component<Props>{
             {
                 options.map((option, index) => {
                     const ActionComponent = new AppActionComponentFactory(option.action).getActionComponent();
-                    return <ActionComponent key={index} action={option.action}>
+                    return <ActionComponent key={index} action={option.action} onClick={() => this.props.onClose()}>
                         <span className={'text-white text-xl cursor-pointer my-4 text-center rounded-full transition border duration-500 ease-in-out p-2 hover:text-black hover:bg-white w-full block'}>
                             {option.title[lang]}
                         </span>
