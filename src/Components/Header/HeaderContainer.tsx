@@ -5,11 +5,12 @@ import { withAppDescriptor } from "./../../AppDescriptor/AppDescriptorContext";
 
 interface Props {
     appDescriptor: AppDescriptor;
+    displayHome?: boolean;
 }
 class HeaderContainer extends React.Component<Props> {
     render(): any {
-        const { appDescriptor } = this.props;
-        return <Header menu={appDescriptor.menu} metadata={appDescriptor.meta} />
+        const { appDescriptor, displayHome } = this.props;
+        return <Header menu={appDescriptor.menu} metadata={appDescriptor.meta} displayHome={displayHome} />
     }
 }
 

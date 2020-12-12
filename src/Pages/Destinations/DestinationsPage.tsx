@@ -29,7 +29,7 @@ class DestinationsPage extends React.Component<Props, State> {
         const destinationPage: DestinationPageDescriptor = appDescriptor.pages.destinations as any;
         const groups = destinationPage.sections.main.groups;
         return <div className="container mx-auto">
-            <HeaderContainer />
+            <HeaderContainer displayHome />
             <br />
             <header className={'text-3xl text-white'}>{Locals.destinations}</header>
             <hr />

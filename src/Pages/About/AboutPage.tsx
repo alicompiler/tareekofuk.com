@@ -19,7 +19,7 @@ class AboutPage extends React.Component<Props> {
         const aboutPage: AboutPageDescriptor = appDescriptor.pages["about"] as any;
         const lang = getCurrentLanguage();
         return <div className="container mx-auto text-white">
-            <HeaderContainer />
+            <HeaderContainer displayHome/>
             <hr />
 
             <header className="text-2xl text-center my-4">{Locals.about_us}</header>

@@ -1,19 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AppActionComponentFactory } from "../../AppDescriptor/AppActionDescriptor/AppActionComponentFactory";
-import { AppMetadataDescriptor, MenuDescriptor } from "./../../AppDescriptor/AppDescriptor";
+import { AppDescriptorActionType, AppMetadataDescriptor, MenuDescriptor } from "./../../AppDescriptor/AppDescriptor";
 import { getCurrentLanguage } from "../../Localization/Language";
+import { Locals } from "../../Localization/Locals";
 
 interface Props {
     metadata: AppMetadataDescriptor;
     menu: MenuDescriptor;
+    displayHome?: boolean;
 }
 
 export class Header extends React.Component<Props> {
     render(): any {
 
-        const { menu, metadata } = this.props;
+        const { menu, metadata, displayHome } = this.props;
         const lang = getCurrentLanguage();
+
+        const options = (displayHome ? [{
+            title: { ar: Locals.home, en: Locals.home },
+            action: { type: AppDescriptorActionType.ROUTE, value: "/" }
+        }] : []).concat(menu.options);
 
         return <div className={'lg:px-24 lg:py-16 md:px-16 md:py-8 p-4 flex justify-between'}>
 
@@ -27,7 +34,7 @@ export class Header extends React.Component<Props> {
 
             <div className={'hidden lg:grid grid-flow-col auto-cols-max items-center gap-2'}>
                 {
-                    menu.options.map((option, index) => {
+                    options.map((option, index) => {
                         const ActionComponent = new AppActionComponentFactory(option.action).getActionComponent();
                         return <ActionComponent key={index} action={option.action}>
                             <span className={'text-white text-lg cursor-pointer text-center rounded-full transition duration-500 ease-in-out p-2 hover:text-black hover:bg-white'}>
