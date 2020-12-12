@@ -9,6 +9,7 @@ interface Props {
     metadata: AppMetadataDescriptor;
     menu: MenuDescriptor;
     displayHome?: boolean;
+    onDrawer: () => void;
 }
 
 export class Header extends React.Component<Props> {
@@ -22,7 +23,7 @@ export class Header extends React.Component<Props> {
             action: { type: AppDescriptorActionType.ROUTE, value: "/" }
         }] : []).concat(menu.options);
 
-        return <div className={'lg:px-24 lg:py-16 md:px-16 md:py-8 p-4 flex justify-between'}>
+        return <div className={'lg:px-24 lg:py-16 md:px-16 md:py-12 p-8 flex justify-between'}>
 
             <Link to={'/'}>
                 <div className={'flex items-center'}>
@@ -45,8 +46,10 @@ export class Header extends React.Component<Props> {
                 }
             </div>
 
-            <div className={'sm:flex items-center lg:hidden'}>
-                <img alt={'logo'} src={'/res/icons/menu.png'} className={'w-8 h-8 md:w-12 md:h-12'} />
+            <div className={'flex items-center lg:hidden'}>
+                <a onClick={() => this.props.onDrawer()}>
+                    <img alt={'logo'} src={menu.drawerIcon} className={'w-8 h-8 md:w-12 md:h-12'} />
+                </a>
             </div>
 
         </div>

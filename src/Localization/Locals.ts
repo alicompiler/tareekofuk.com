@@ -3,7 +3,8 @@ import { ArabicLocals } from './ArabicLocals';
 import { getCurrentLanguage } from "./Language";
 
 interface ILocals {
-    home: any;
+    close: string;
+    home: string;
     about_us: string;
     images: string;
     for_booking: string;

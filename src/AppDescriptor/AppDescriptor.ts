@@ -13,7 +13,7 @@ export interface AppMetadataDescriptor {
     logo: string;
     title: LocalString;
     slogan: LocalString;
-    copyrightText : LocalString;
+    copyrightText: LocalString;
 }
 
 export interface PageDescriptor {
@@ -42,6 +42,7 @@ export interface MenuOption {
     title: LocalString;
     action: AppActionDescriptor;
 }
+
 
 export enum AppDescriptorActionType {
     ROUTE = "ROUTE",
